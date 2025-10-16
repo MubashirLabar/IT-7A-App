@@ -1,20 +1,60 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { View, Text, StyleSheet, StatusBar, ScrollView } from "react-native";
 
-export default function App() {
+function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ScrollView horizontal={true}>
+      <View style={styles.container}>
+        <View style={styles.box1}>
+          <Text style={styles.title}>Pizza</Text>
+        </View>
+        <View style={styles.box2}>
+          <Text style={styles.title}>Zinger</Text>
+        </View>
+        <View style={styles.box3}>
+          <Text style={styles.title}>Pasta</Text>
+        </View>
+      </View>
+    </ScrollView>
   );
 }
+
+export default App;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flexDirection: "row",
+    gap: 20,
+    paddingVertical: 68,
+    paddingHorizontal: 20,
+  },
+  box1: {
+    height: 260,
+    width: 200,
+    borderRadius: 24,
+    backgroundColor: "red",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  box2: {
+    height: 260,
+    width: 200,
+    borderRadius: 24,
+    backgroundColor: "orange",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  box3: {
+    height: 260,
+    width: 200,
+    borderRadius: 24,
+    backgroundColor: "blue",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  title: {
+    fontSize: 32,
+    fontWeight: "bold",
+    color: "white",
   },
 });

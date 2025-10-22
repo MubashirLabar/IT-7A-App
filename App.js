@@ -1,16 +1,16 @@
-import { View, Text, StyleSheet, StatusBar, ScrollView } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 
 function App() {
   return (
     <ScrollView horizontal={true}>
       <View style={styles.container}>
-        <View style={styles.box1}>
+        <View style={[styles.box, { backgroundColor: "red" }]}>
           <Text style={styles.title}>Pizza</Text>
         </View>
-        <View style={styles.box2}>
+        <View style={[styles.box, { backgroundColor: "orange" }]}>
           <Text style={styles.title}>Zinger</Text>
         </View>
-        <View style={styles.box3}>
+        <View style={[styles.box, { backgroundColor: "blue" }]}>
           <Text style={styles.title}>Pasta</Text>
         </View>
       </View>
@@ -28,29 +28,13 @@ const styles = StyleSheet.create({
     paddingVertical: 68,
     paddingHorizontal: 20,
   },
-  box1: {
+  box: {
     height: 260,
     width: 200,
     borderRadius: 24,
-    backgroundColor: "red",
     justifyContent: "center",
     alignItems: "center",
-  },
-  box2: {
-    height: 260,
-    width: 200,
-    borderRadius: 24,
-    backgroundColor: "orange",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  box3: {
-    height: 260,
-    width: 200,
-    borderRadius: 24,
-    backgroundColor: "blue",
-    justifyContent: "center",
-    alignItems: "center",
+    backgroundColor: "black",
   },
   title: {
     fontSize: 32,
